@@ -8,7 +8,7 @@ html, body, #root {
 }
 
 .main-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418) ), url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fwallpaper%2F&psig=AOvVaw2_rxwh0Arh43DeO1iPjQbj&ust=1611489491181000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDGmaeAsu4CFQAAAAAdAAAAABAH');
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fwallpaper%2F&psig=AOvVaw2_rxwh0Arh43DeO1iPjQbj&ust=1611489491181000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDGmaeAsu4CFQAAAAAdAAAAABAH');
   background-size: cover;
   background-position: center;
 }
