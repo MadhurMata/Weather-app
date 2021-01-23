@@ -12,18 +12,19 @@ self.addEventListener('install', (event) => {
 
         return cache.addAll(urlsToCache);
       })
+      .then(self.skipWaiting())
   )
 });
 
-// Listen fopr request
+// Listen for request
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(() => {
-        return fetch(event.request)
-          .catch(() => caches.match('offline.html'))
-      })
-  )
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.match(event.request).then(cacheResponse => cacheResponse || fetch(event.request).then(networkResponse => {
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      }))
+    }))
 });
 
 // Activate the SW
